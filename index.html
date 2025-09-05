@@ -1,0 +1,141 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Your Name — Personal Website</title>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#6ee7b7;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial; background:linear-gradient(180deg,#071122 0%, #071522 100%); color:#e6eef8}
+    .container{max-width:900px;margin:40px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo .mark{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;font-weight:700;color:#042023}
+    nav a{color:var(--muted);text-decoration:none;margin-left:14px}
+    .hero{display:grid;grid-template-columns:1fr;gap:18px;padding:28px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:14px;margin-top:18px}
+    h1{margin:0;font-size:clamp(22px,4vw,36px)}
+    p.lead{margin:0;color:var(--muted);line-height:1.5}
+    .links{margin-top:12px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--accent);color:#023; font-weight:600;text-decoration:none}
+    section{margin-top:22px}
+    .card{background:rgba(255,255,255,0.02);padding:18px;border-radius:12px}
+    ul.projects{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:12px}
+    .project{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+    .muted{color:var(--muted)}
+    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px}
+    @media(min-width:720px){.hero{grid-template-columns:1fr 320px}}
+    .contact-form input,.contact-form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;margin-top:8px}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media(max-width:719px){.contact-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="mark">YN</div>
+        <div>
+          <div style="font-weight:700">Nick Hansen</div>
+          <div class="muted" style="font-size:13px">Developer • Learner</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero card">
+        <div>
+          <h1>Hi — I'm Nick Hansen.</h1>
+          <p class="lead">I build things for the web, explore neat tools, and learn something new every week. Currently interested in web development, self-hosting, and automation.</p>
+          <div class="links">
+            <a class="btn" href="#projects">See projects</a>
+            <a style="margin-left:10px;color:var(--muted);text-decoration:none" href="#contact">Contact me</a>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:center">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><rect rx='18' width='100%' height='100%' fill='%230b1220'/><text x='50%' y='50%' fill='%23a1b2c7' dominant-baseline='middle' text-anchor='middle' font-family='Inter,Arial' font-size='20'>Profile</text></svg>" alt="profile" style="border-radius:12px;max-width:100%">
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="card">
+          <h2>About</h2>
+          <p class="muted">I'm a student and hobbyist developer who enjoys building small apps."</p>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="card">
+          <h2>Projects</h2>
+          <ul class="projects">
+            <li class="project">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <div>
+                  <div style="font-weight:600">Self-hosted OpenWebUI</div>
+                  <div class="muted" style="font-size:13px">A personal instance for experimenting with LLM interfaces.</div>
+                </div>
+                <a href="#" class="muted" style="text-decoration:none">View</a>
+              </div>
+            </li>
+            <li class="project">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <div>
+                  <div style="font-weight:600">Plex / Media Server</div>
+                  <div class="muted" style="font-size:13px">Organized media accessible on local network.</div>
+                </div>
+                <a href="#" class="muted" style="text-decoration:none">View</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="card">
+          <h2>Contact</h2>
+          <p class="muted">Want to get in touch? Send an email or connect on social media.</p>
+          <div style="margin-top:12px">
+            <div class="contact-grid">
+              <div>
+                <strong>Email</strong>
+                <div class="muted" style="margin-top:6px">youremail@example.com</div>
+              </div>
+              <div>
+                <strong>Location</strong>
+                <div class="muted" style="margin-top:6px">City, Country</div>
+              </div>
+            </div>
+
+            <form class="contact-form" style="margin-top:12px" action="mailto:youremail@example.com" method="post" enctype="text/plain">
+              <input type="text" name="name" placeholder="Your name">
+              <input type="email" name="email" placeholder="Your email">
+              <textarea name="message" rows="4" placeholder="Message"></textarea>
+              <div style="margin-top:8px">
+                <button class="btn" type="submit">Send</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="muted">© <span id="year"></span> Nick Hansen — Built with ✨</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -107,10 +107,38 @@
     .skill {
       background: #182633;
       color: #cfe8ff;
-      padding: 6px 12px;
-      border-radius: 20px;
-      font-size: 0.85em;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 0.9em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      flex: 0 0 auto;
+      min-width: 120px;
+      overflow: hidden;
+    }
+    .skill-details {
+      max-height: 0;
+      overflow: hidden;
+      font-size: 0.8em;
+      color: #bbb;
+      margin-top: 8px;
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+      opacity: 0;
+      position: absolute;
+      left: 0;
+      right: 0;
+    }
+    .skill.active {
+      flex: 1 1 100%;
+      background: #243a4f;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.6);
+    }
+
+    .skill.active .skill-details {
+      position: relative;
+      max-height: 200px;
+      opacity: 1;
     }
     .skill:hover {
      transform: translateY(-3px);
@@ -303,15 +331,33 @@
         <p>I am a current College Student that is interested in Information Technology, Computer Science, and Engineering. I am working on various projects that can be shared and accessed on the web and are useful for myself and possibly others.</p>
       </section>
 
-      <section id="skills" class="card">
+     <section id="skills" class="card">
         <h2>Skills</h2>
         <div class="skills">
-          <div class="skill">TBD</div>
-          <div class="skill">TBD</div>
-          <div class="skill">TBD</div>
-          <div class="skill">TBD</div>
-          <div class="skill">TBD</div>
-          <div class="skill">TBD</div>
+          <div class="skill" tabindex="0" role="button" aria-expanded="false">
+            <span class="skill-title">Web Development</span>
+            <div class="skill-details">Some experiance with HTML, CSS, and JavaScript. Learning every day to make websites like this one.</div>
+          </div>
+
+          <div class="skill" tabindex="0" role="button" aria-expanded="false">
+            <span class="skill-title">Guide Making</span>
+            <div class="skill-details">Creating clear step-by-step documentation and guides for setup and deployment.</div>
+          </div>
+
+          <div class="skill" tabindex="0" role="button" aria-expanded="false">
+            <span class="skill-title">Self Taught</span>
+            <div class="skill-details">Independent learning in IT, programming, and engineering topics.</div>
+          </div>
+
+          <div class="skill" tabindex="0" role="button" aria-expanded="false">
+            <span class="skill-title">Teamwork</span>
+            <div class="skill-details">Collaborated with peers on group projects and tasks.</div>
+          </div>
+
+          <div class="skill" tabindex="0" role="button" aria-expanded="false">
+            <span class="skill-title">Work Management</span>
+            <div class="skill-details">Organizing tasks, prioritizing deadlines, and managing personal projects.</div>
+          </div>
         </div>
       </section>
 
@@ -327,17 +373,17 @@
         <ul class="projects">
           <li class="project">
             <div class="project-text">
-              <div class="project-title">Self-hosted OpenWebUI</div>
-              <div class="project-desc">A personal instance for experimenting with LLM interfaces. Not generally public, but message me if you'd like to try it.</div>
-              <div class="tags"><span class="tag">LLM</span> <span class="tag">Web</span> <span class="tag">Private</span></div>
+              <div class="project-title">Self-hosted AI Web Interface</div>
+              <div class="project-desc">A Guide will come soon. But contact me if you would like access to my personal implementation of it through docker.</div>
+              <div class="tags"><span class="tag">LLM</span> <span class="tag">Private</span></div>
             </div>
             <a href="https://chat.hansennet.dev" class="btn" target="_blank" rel="noopener noreferrer">View</a>
           </li>
           <li class="project">
             <div class="project-text">
               <div class="project-title">Minecraft Server Map</div>
-              <div class="project-desc">Quick 2D live map of my self-hosted Minecraft server. Currently whitelist only, but might open in the future.</div>
-              <div class="tags"><span class="tag">Web</span> <span class="tag">Minecraft</span></div>
+              <div class="project-desc">Quick 2D live map of my self-hosted Minecraft server. Currently whitelist only.</div>
+              <div class="tags"><span class="tag">Minecraft</span></div>
             </div>
             <a href="https://minecraft.hansennet.dev" class="btn" target="_blank" rel="noopener noreferrer">View</a>
           </li>
@@ -374,6 +420,17 @@
   </div>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    // Skills expand/collapse
+    document.querySelectorAll('.skill').forEach(skill => {
+      skill.addEventListener('click', () => {
+        // Close other open skills
+        document.querySelectorAll('.skill').forEach(s => {
+          if (s !== skill) s.classList.remove('active');
+        });
+        // Toggle clicked one
+        skill.classList.toggle('active');
+      });
+    });
   </script>
 </body>
 </html>
